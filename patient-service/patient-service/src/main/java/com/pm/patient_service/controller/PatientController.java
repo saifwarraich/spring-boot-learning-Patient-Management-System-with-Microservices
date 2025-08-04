@@ -16,7 +16,7 @@ import com.pm.patient_service.service.PatientService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/patients")
+@RequestMapping("/api/patients")
 public class PatientController {
     private final PatientService patientService;
 
