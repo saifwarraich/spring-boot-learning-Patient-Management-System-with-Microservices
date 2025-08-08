@@ -30,4 +30,10 @@ public class GlobalExceptionHandler {
         logger.warn("Email already exists: {}", ex.getMessage());
         return ResponseEntity.status(409).body(Map.of("error", ex.getMessage()));
     }
+
+    @ExceptionHandler(UserDoesNotExistException.class)
+    public ResponseEntity<Map<String, String>> handleUserDoesNotExist(UserDoesNotExistException ex) {
+        logger.warn("User does not exist: {}", ex.getMessage());
+        return ResponseEntity.status(404).body(Map.of("error", ex.getMessage()));
+    }
 }
